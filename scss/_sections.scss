@@ -91,6 +91,7 @@
     gap: 14px;
     margin-top: 32px;
     @include mq(sp) {
+      justify-content: center; // スマホのみ中央揃え（PCは左揃えのまま）
       gap: 8px;
     }
     li {
@@ -189,6 +190,21 @@
     strong {
       font-size: 1.6em;
       color: $c-orange;
+    }
+  }
+  // スマホでは「無料体験授業2回」「＋」「入塾金0円」の3行に分ける
+  &__line,
+  &__plus {
+    @include mq(sp) {
+      display: block;
+    }
+  }
+  &__line {
+    white-space: nowrap;
+  }
+  &__plus {
+    @include mq(sp) {
+      line-height: 1.2;
     }
   }
   &__note {

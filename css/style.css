@@ -339,9 +339,10 @@ button {
     position: fixed;
     inset: 76px 0 0 0;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 40px;
-    padding: 24px;
+    padding: 48px 24px;
+    overflow-y: auto;
     background: #fff6d6;
     opacity: 0;
     visibility: hidden;
@@ -593,6 +594,7 @@ button {
 }
 @media (max-width: 767px) {
   .fv__points {
+    justify-content: center;
     gap: 8px;
   }
 }
@@ -708,6 +710,19 @@ button {
 .campaign__title strong {
   font-size: 1.6em;
   color: #ff7a45;
+}
+@media (max-width: 767px) {
+  .campaign__line, .campaign__plus {
+    display: block;
+  }
+}
+.campaign__line {
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .campaign__plus {
+    line-height: 1.2;
+  }
 }
 .campaign__note {
   margin-top: 16px;

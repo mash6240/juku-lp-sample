@@ -202,9 +202,10 @@
     position: fixed;
     inset: $header-h 0 0 0;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; // 上詰めにして、メニュー上部の余白をなくす
     gap: 40px;
-    padding: 24px;
+    padding: 48px 24px;
+    overflow-y: auto;
     background: $c-yellow-light;
     opacity: 0;
     visibility: hidden;
