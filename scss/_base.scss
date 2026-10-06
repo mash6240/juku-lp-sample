@@ -1,0 +1,113 @@
+@use "settings" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: $header-h + 16px;
+  @include mq(sp) {
+    scroll-padding-top: $header-h-sp + 12px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: $f-base;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+  color: $c-text;
+  background: $c-bg;
+  -webkit-font-smoothing: antialiased;
+  @include mq(sp) {
+    font-size: 15px;
+  }
+  &.is-menu-open {
+    overflow: hidden;
+  }
+}
+
+h1, h2, h3, p, ul, ol, dl, dd, table {
+  margin: 0;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 3px solid $c-orange;
+  outline-offset: 3px;
+}
+
+.pc-only {
+  @include mq(sp) {
+    display: none;
+  }
+}
+
+.sp-only {
+  display: none;
+  @include mq(sp) {
+    display: inline;
+  }
+}
+
+
+.note {
+  margin-top: 24px;
+  font-size: 0.8125rem;
+  color: $c-sub;
+}
+
+
+.js-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js-fade {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

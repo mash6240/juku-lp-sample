@@ -1,0 +1,13 @@
+{
+  "name": "juku-lp-sample",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sample LP coding (fictional cram school)",
+  "scripts": {
+    "build": "sass scss/style.scss css/style.css --style=expanded --no-source-map",
+    "watch": "sass --watch scss/style.scss css/style.css --style=expanded --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.105.1"
+  }
+}
